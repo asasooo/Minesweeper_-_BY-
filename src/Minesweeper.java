@@ -26,7 +26,7 @@ class win_Start {
 	public void frameLaunch() {
 		installWin = new Frame();
 		installWin.setBounds(300, 300, 300, 500);
-		installWin.setTitle("ÉèÖÃ");
+		installWin.setTitle("è®¾ç½®");
 		installWin.setVisible(true);
 		installWin.setLayout(null);
 		installWin.setBackground(new Color(235, 235, 235));
@@ -36,11 +36,11 @@ class win_Start {
 				System.exit(0);
 			}
 		});
-		Label l1 = new Label("  ÊäÈëÆåÅÌ´óĞ¡(8-16)£º");
-		l1.setFont(new Font("ËÎÌå" , Font.BOLD, 18));
-		Label l2 = new Label("  ÊäÈëµØÀ×Êı(´óÓÚµÈÓÚ8)£º");
-		l2.setFont(new Font("ËÎÌå" , Font.BOLD, 18));
-		Button sure = new Button("Æô¶¯");
+		Label l1 = new Label("  è¾“å…¥æ£‹ç›˜å¤§å°(8-16)ï¼š");
+		l1.setFont(new Font("å®‹ä½“", Font.BOLD, 18));
+		Label l2 = new Label("  è¾“å…¥åœ°é›·æ•°(å¤§äºç­‰äº8)ï¼š");
+		l2.setFont(new Font("å®‹ä½“", Font.BOLD, 18));
+		Button sure = new Button("å¯åŠ¨");
 		l1.setBounds(50, 50, 200, 50);
 		l2.setBounds(50, 200, 200, 50);
 		sure.setBounds(50, 350, 200, 100);
@@ -51,8 +51,8 @@ class win_Start {
 		tf_number = new TextField();
 		tf_lage.setBounds(100, 100, 100, 50);
 		tf_number.setBounds(100, 250, 100, 50);
-		tf_lage.setFont(new Font("ËÎÌå" , Font.BOLD, 38));
-		tf_number.setFont(new Font("ËÎÌå" , Font.BOLD, 38));
+		tf_lage.setFont(new Font("å®‹ä½“", Font.BOLD, 38));
+		tf_number.setFont(new Font("å®‹ä½“", Font.BOLD, 38));
 		installWin.add(l1);
 		installWin.add(l2);
 		installWin.add(tf_lage);
@@ -68,18 +68,18 @@ class win_Start {
 				lage = Integer.parseInt(tf_lage.getText());
 				number = Integer.parseInt(tf_number.getText());
 			} catch (Exception ae) {
-				JOptionPane.showMessageDialog(null, "´íÎó!  ÇëÊäÈëÊı×Ö!", "³öÏÖ´íÎó!", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "é”™è¯¯!  è¯·è¾“å…¥æ•°å­—!", "å‡ºç°é”™è¯¯!", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			if (lage > 7 && lage < 17) {
 				if (number >= 8) {
-					// Æô¶¯ÏÂÒ»²½Frame.
+					// å¯åŠ¨ä¸‹ä¸€æ­¥Frame.
 					installWin.setVisible(false);
 					new mainFrame(lage, number).mainFrameLaunch();
 				} else
-					JOptionPane.showMessageDialog(null, "´íÎó!  ÊäÈë·¶Î§Ó¦´óÓÚµÈÓÚ8!", "³öÏÖ´íÎó!", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "é”™è¯¯!  è¾“å…¥èŒƒå›´åº”å¤§äºç­‰äº8!", "å‡ºç°é”™è¯¯!", JOptionPane.ERROR_MESSAGE);
 			} else
-				JOptionPane.showMessageDialog(null, "´íÎó!  ÊäÈë·¶Î§ÓĞÎó!", "³öÏÖ´íÎó!", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "é”™è¯¯!  è¾“å…¥èŒƒå›´æœ‰è¯¯!", "å‡ºç°é”™è¯¯!", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -94,6 +94,7 @@ class win_Start {
 		TextField tf_time = null;
 		JButton[][] Mine = null;
 		timeStart timeStartLaunch = new timeStart();
+
 		mainFrame(int lage, int number) {
 			this.lage = lage;
 			this.number = number;
@@ -103,7 +104,7 @@ class win_Start {
 		public void mainFrameLaunch() {
 			Frame mainFrame = new Frame();
 			mainFrame.setBackground(new Color(230, 230, 250));
-			mainFrame.setTitle("É¨À×");
+			mainFrame.setTitle("æ‰«é›·");
 			mainFrame.setBounds(200, 200, 150 + (35 * lage), 350 + (35 * lage));
 			mainFrame.setVisible(true);
 			mainFrame.setLayout(null);
@@ -111,8 +112,8 @@ class win_Start {
 			p_time.setLayout(null);
 			p_time.setBounds((150 + (35 * lage)) / 2 - 100, 50, 200, 50);
 			p_time.setBackground(new Color(245, 245, 245));
-			Button b_reStart = new Button("ÖØĞÂ¿ªÊ¼");
-			b_reStart.setFont(new Font("ËÎÌå" , Font.BOLD, 36));
+			Button b_reStart = new Button("é‡æ–°å¼€å§‹");
+			b_reStart.setFont(new Font("å®‹ä½“", Font.BOLD, 36));
 			b_reStart.setBounds((150 + (35 * lage)) / 2 - 100, 200 + (35 * lage), 200, 100);
 			b_reStart.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -124,7 +125,7 @@ class win_Start {
 							thisName = thisName.replace("@", "");
 							Mine[a][b].setName(thisName);
 							Mine[a][b].setBackground(new Color(176, 196, 222));
-							timeStop = true ;
+							timeStop = true;
 							new Thread(new timeStart()).start();
 						}
 					}
@@ -138,14 +139,14 @@ class win_Start {
 			p_background.setBounds(73, 147, (35 * lage) + 4, (35 * lage) + 4);
 			p_background.setBackground(new Color(176, 196, 222));
 
-			// ¼ÆËãÊ±¼ä.
+			// è®¡ç®—æ—¶é—´.
 			{
-				Label l_time = new Label(" Ê±¼ä£º");
+				Label l_time = new Label(" æ—¶é—´ï¼š");
 				l_time.setBounds(0, 0, 80, 50);
-				l_time.setFont(new Font("ËÎÌå" , Font.BOLD, 28));
+				l_time.setFont(new Font("å®‹ä½“", Font.BOLD, 28));
 				tf_time = new TextField();
 				tf_time.setEditable(false);
-				tf_time.setFont(new Font("ËÎÌå" , Font.BOLD, 40));
+				tf_time.setFont(new Font("å®‹ä½“", Font.BOLD, 40));
 				tf_time.setBackground(Color.WHITE);
 				tf_time.setBounds(90, 0, 110, 50);
 				new Thread(timeStartLaunch).start();
@@ -157,7 +158,7 @@ class win_Start {
 			mainFrame.add(p_main);
 			mainFrame.add(p_background);
 			addMineButton();
-			// ¿ÉÒÔaddMineButton.
+			// å¯ä»¥addMineButton.
 			mainFrame.addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent e) {
 					mainFrame.setVisible(false);
@@ -169,7 +170,7 @@ class win_Start {
 		public void addMineButton() {
 			for (int a = 0; a < lage; a++) {
 				for (int b = 0; b < lage; b++) {
-					// ¿ÉÒÔÔËĞĞ
+					// å¯ä»¥è¿è¡Œ
 					Mine[a][b] = new JButton();
 					Mine[a][b].setName("0_<x>" + a + "</x><y>" + b + "</y>");
 					Mine[a][b].setBackground(new Color(176, 196, 222));
@@ -177,14 +178,14 @@ class win_Start {
 					Mine[a][b].addMouseListener(new mouseTry());
 					Mine[a][b].setBounds(a * 35, b * 35, 35, 35);
 					p_main.add(Mine[a][b]);
-//					¿ÉÒÔadd
+					// å¯ä»¥add
 				}
 			}
 			addMine();
 		}
 
 		public void addMine() {
-			// ÂñÀ×·½·¨
+			// åŸ‹é›·æ–¹æ³•
 			Random r = new Random();
 			int i = 0;
 			while (i < number) {
@@ -198,9 +199,9 @@ class win_Start {
 					Mine[x][y].setName(nameList);
 				} else
 					continue;
-				// ¿ÉÒÔËæ»ú
+				// å¯ä»¥éšæœº
 				i++;
-				// 0ÎªÓĞÀÛ 1Ã»À×
+				// 0ä¸ºæœ‰ç´¯ 1æ²¡é›·
 			}
 		}
 
@@ -227,7 +228,7 @@ class win_Start {
 			public void mouseClicked(MouseEvent e) {
 				jb = (JButton) e.getSource();
 				if (e.getButton() == 3) {
-					if(jb.getName().contains("@") == false) {
+					if (jb.getName().contains("@") == false) {
 						if (jb.getName().contains("^")) {
 							jb.setIcon(null);
 							String afterName = jb.getName();
@@ -244,35 +245,35 @@ class win_Start {
 					String name = jb.getName();
 					String mineHave = name.substring(0, 1);
 					// System.out.print(name);
-//					System.out.println(mineHave);
+					// System.out.println(mineHave);
 					int have = Integer.parseInt(mineHave);
 					if (name.contentEquals("^") == false) {
 						if (have == 1) {
 							jb.setBackground(Color.RED);
 							jb.setIcon(bloom);
 							showMine();
-							JOptionPane.showMessageDialog(null, "Ê§°Ü£¡", "ÌáÊ¾", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null, "å¤±è´¥ï¼", "æç¤º", JOptionPane.ERROR_MESSAGE);
 						} else if (have == 0) {
-							// ¼ì²éËÄÖÜÓĞÃ»ÓĞÀ×
+							// æ£€æŸ¥å››å‘¨æœ‰æ²¡æœ‰é›·
 							{
 								String mineName = jb.getName();
 								mineName = mineName.substring(1, mineName.length());
 								mineName = mineName.replace("_", "");
 								int jbY = 0, jbX = 0;
-								// ½ØÈ¡×Ö·ûÉè¶¨×ø±ê.
+								// æˆªå–å­—ç¬¦è®¾å®šåæ ‡.
 								String regexX = "<x>(.*)</x>";
 								Pattern patternX = Pattern.compile(regexX);
-								Matcher matcherX = patternX.matcher(mineName);// Æ¥ÅäÀà
+								Matcher matcherX = patternX.matcher(mineName);// åŒ¹é…ç±»
 								while (matcherX.find()) {
 									jbX = Integer.parseInt(matcherX.group(1));
 								}
 								String regexY = "<y>(.*)</y>";
 								Pattern patternY = Pattern.compile(regexY);
-								Matcher matcherY = patternY.matcher(mineName);// Æ¥ÅäÀà
+								Matcher matcherY = patternY.matcher(mineName);// åŒ¹é…ç±»
 								while (matcherY.find()) {
-									jbY = Integer.parseInt(matcherY.group(1));// ´òÓ¡ÖĞ¼ä×Ö·û
+									jbY = Integer.parseInt(matcherY.group(1));// æ‰“å°ä¸­é—´å­—ç¬¦
 								}
-								// ¼ì²éËÄÖÜÊÇ·ñÓĞÀ×.
+								// æ£€æŸ¥å››å‘¨æ˜¯å¦æœ‰é›·.
 								{
 									cheakMine(jbX, jbY);
 									cheakWin();
@@ -282,30 +283,31 @@ class win_Start {
 					}
 				}
 			}
-			
+
 			public void cheakWin() {
-				int cheakNumber = 0 ;
-				for(int a = 0 ;a < lage ;a++) {
-					for(int b = 0 ; b< lage ;b++ ) {
+				int cheakNumber = 0;
+				for (int a = 0; a < lage; a++) {
+					for (int b = 0; b < lage; b++) {
 						String mineName = Mine[a][b].getName();
-						if(mineName.contains("@")) {
+						if (mineName.contains("@")) {
 							cheakNumber++;
 						}
-						if(cheakNumber == lage*lage - number ) {
-							JOptionPane.showMessageDialog(null, "³É¹¦£¡  ÓÃÊ±£º"+tf_time.getName(), "ÌáÊ¾", JOptionPane.ERROR_MESSAGE);
+						if (cheakNumber == lage * lage - number) {
+							JOptionPane.showMessageDialog(null, "æˆåŠŸï¼  ç”¨æ—¶ï¼š" + tf_time.getName(), "æç¤º",
+									JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}
 			}
 
 			public void cheakMine(int jbX, int jbY) {
-				Mine[jbX][jbY].setName(Mine[jbX][jbY].getName()+"@");
+				Mine[jbX][jbY].setName(Mine[jbX][jbY].getName() + "@");
 				int MineNumber = 0;
 				for (int i = 0; i < 8; i++) {
 					int jb_X = jbX + around[i][0];
 					int jb_Y = jbY + around[i][1];
 					if (jb_X >= 0 && jb_X < lage && jb_Y >= 0 && jb_Y < lage) {
-//						System.out.println(jb_X + " " + jb_Y);
+						// System.out.println(jb_X + " " + jb_Y);
 						try {
 							String jbName1 = Mine[jb_X][jb_Y].getName();
 							// System.out.println(jbName1);
@@ -320,7 +322,7 @@ class win_Start {
 					}
 				}
 				if (MineNumber != 0) {
-					Mine[jbX][jbY].setFont(new Font("ËÎÌå" , Font.BOLD, 32));
+					Mine[jbX][jbY].setFont(new Font("å®‹ä½“", Font.BOLD, 32));
 					Mine[jbX][jbY].setBackground(Color.WHITE);
 					Mine[jbX][jbY].setText("" + MineNumber);
 				} else if (MineNumber == 0) {
@@ -330,13 +332,13 @@ class win_Start {
 						int jb_Y = jbY + around[i][1];
 						try {
 							boolean flag = Mine[jb_X][jb_Y].getName().contains("@");
-							if (jb_X >= 0 && jb_X < lage && jb_Y >= 0 && jb_Y < lage && flag==false) {
+							if (jb_X >= 0 && jb_X < lage && jb_Y >= 0 && jb_Y < lage && flag == false) {
 								cheakMine(jb_X, jb_Y);
 							}
-						}catch(ArrayIndexOutOfBoundsException ae) {
+						} catch (ArrayIndexOutOfBoundsException ae) {
 							;
 						}
-						
+
 					}
 				}
 			}
@@ -357,16 +359,16 @@ class win_Start {
 		class timeStart extends Thread {
 			public void run() {
 				int time = 0;
-					while (timeStop) {
-						tf_time.setText("" + time + "Ãë");
-						// ¿ÉÒÔÊä³ö.¿ÉÒÔÔİÍ£.
-						try {
-							sleep(1000);
-						} catch (InterruptedException ae) {
-							System.out.println("sleep Error");
-						}
-						time = time + 1;
-					}	
+				while (timeStop) {
+					tf_time.setText("" + time + "ç§’");
+					// å¯ä»¥è¾“å‡º.å¯ä»¥æš‚åœ.
+					try {
+						sleep(1000);
+					} catch (InterruptedException ae) {
+						System.out.println("sleep Error");
+					}
+					time = time + 1;
+				}
 			}
 		}
 	}
