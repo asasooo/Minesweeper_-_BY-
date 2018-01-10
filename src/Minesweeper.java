@@ -39,7 +39,7 @@ class win_Start {
 		Label l1 = new Label("  输入棋盘大小(8-16)：");
 		l1.setFont(new Font("宋体", Font.BOLD, 18));
 		Label l2 = new Label("  输入地雷数(大于等于8)：");
-		l2.setFont(new Font("宋体", Font.BOLD, 18));
+		l2.setFont(new Font("宋体", Font.BOLD, 16));
 		Button sure = new Button("启动");
 		l1.setBounds(50, 50, 200, 50);
 		l2.setBounds(50, 200, 200, 50);
@@ -293,7 +293,8 @@ class win_Start {
 							cheakNumber++;
 						}
 						if (cheakNumber == lage * lage - number) {
-							JOptionPane.showMessageDialog(null, "成功！  用时：" + tf_time.getName(), "提示",
+							String timeWin = tf_time.getText();
+							JOptionPane.showMessageDialog(null, "成功！  用时：" + timeWin, "提示",
 									JOptionPane.ERROR_MESSAGE);
 						}
 					}
