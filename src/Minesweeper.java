@@ -71,7 +71,7 @@ class win_Start {
 				JOptionPane.showMessageDialog(null, "错误!  请输入数字!", "出现错误!", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-			if (lage > 7 && lage < 17 && number <= lage*lage) {
+			if (lage > 7 && lage < 17 && number <= lage * lage) {
 				if (number >= 8) {
 					// 启动下一步Frame.
 					installWin.setVisible(false);
@@ -294,8 +294,9 @@ class win_Start {
 						}
 						if (cheakNumber == lage * lage - number) {
 							String timeWin = tf_time.getText();
-							JOptionPane.showMessageDialog(null, "成功！  用时：" + timeWin, "提示",
-									JOptionPane.ERROR_MESSAGE);
+							tf_time.setText(timeWin);
+							timeStop = false;
+							JOptionPane.showMessageDialog(null, "成功！  用时：" + timeWin, "提示", JOptionPane.ERROR_MESSAGE);
 						}
 					}
 				}
